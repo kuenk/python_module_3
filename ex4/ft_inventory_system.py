@@ -75,7 +75,7 @@ def ft_analytics(alice, bob, total, total_items):
 
 
 if __name__ == "__main__":
-    print("===Player Inventory System === \n\n")
+    print("===Player Inventory System === \n")
     alice = dict()
     alice.update({"sword": {"obj": "weapon", "rarity": "rare",
                             "quantity": 1, "price": 500},
@@ -91,9 +91,7 @@ if __name__ == "__main__":
     categories = dict()
     total = 0
     total_items = 0
-# alice inventory
+
     total, total_items = ft_alice_inventory(alice, total, total_items)
-# transaction
     ft_transaction(alice, bob)
-# analytisc
     ft_analytics(alice, bob, total, total_items)

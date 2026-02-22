@@ -5,7 +5,7 @@ import math
 def cal_distance(start, data):
     """Calculate the distance between start and input"""
     result = math.sqrt((data[0] - start[0])**2 +
-                       (data[1] - start[1]**2) +
+                       (data[1] - start[1])**2 +
                        (data[2] - start[2])**2)
     return (result)
 

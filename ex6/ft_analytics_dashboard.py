@@ -60,20 +60,24 @@ if __name__ == '__main__':
     print("\n=== Set Comprehension Examples ===")
     unique_players = {user["username"] for user in players}
     print(f"Unique players: {unique_players}")
-    unique_trophies = {achi for user in players for achi in user["achievements"]}
+    unique_trophies = {achi for user in players
+                       for achi in user["achievements"]}
     print(f"all trophies {unique_trophies}")
-    common = {achi for achi in[achi for user in players for achi in user["achievements"]]
-              if [achi for user in players for achi in user["achievements"]].count(achi) > 1}
+    common = {achi for achi in [achi for user in players
+              for achi in user["achievements"]]
+              if [achi for user in players
+              for achi in user["achievements"]].count(achi) > 1}
     print(f"{common}")
     regions = {user["region"] for user in players}
     print(f"{regions}")
 
-
-    print ("===\n Combined Analysis ===")
+    print("\n=== Combined Analysis ===")
     print(f"Total players: {len(unique_players)}")
     print(f"Total unique achievements: {len(unique_trophies)}")
     avg_score = [user["score"] for user in players]
     print(f"Average score: {sum(avg_score)/len(unique_players)}")
-    top = max([(user["username"], user["score"], len(user["achievements"])) for user in players])
+    top = max([(user["username"], user["score"], len(user["achievements"]))
+              for user in players])
     name, score, num_achi = top
-    print(f"Top performance: {name}, ({score} points, {num_achi} achievements)")
+    print(f"Top performance: {name}, ({score} points, "
+          f"{num_achi} achievements)")
